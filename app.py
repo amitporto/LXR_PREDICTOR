@@ -1,4 +1,4 @@
-import streamlit as st
+#import streamlit as st
 import pickle
 #from rdkit import Chem
 #from rdkit import Chem, DataStructs
@@ -14,19 +14,39 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-st.write("Application started")
+import streamlit as st
+import traceback
+import sys
+import os
 
-import rdkit
+st.write("Python:", sys.version)
 
-st.write("RDKit imported")
-st.write(rdkit.__version__)
+try:
+    import rdkit
+    st.write("RDKit version:", rdkit.__version__)
+    st.write("RDKit location:", rdkit.__file__)
+except Exception:
+    st.code(traceback.format_exc())
 
-from rdkit import Chem
+try:
+    from rdkit import Chem
+    st.write("Chem: OK")
+except Exception:
+    st.code(traceback.format_exc())
 
-st.write("Chem imported")
+try:
+    from rdkit.Chem import Draw
+    st.write("Draw: OK")
+except Exception:
+    st.error("DRAW IMPORT FAILED")
+    st.code(traceback.format_exc())
 
-from rdkit.Chem.Draw import rdMolDraw2D
-st.write("rdMolDraw2D imported")
+try:
+    from rdkit.Chem.Draw import rdMolDraw2D
+    st.write("rdMolDraw2D: OK")
+except Exception:
+    st.error("rdMolDraw2D IMPORT FAILED")
+    st.code(traceback.format_exc())
 
 
 # Load the trained SVC model from pickle file
