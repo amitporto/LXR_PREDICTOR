@@ -25,6 +25,9 @@ from rdkit import Chem
 
 st.write("Chem imported")
 
+from rdkit.Chem.Draw import rdMolDraw2D
+st.write("rdMolDraw2D imported")
+
 
 # Load the trained SVC model from pickle file
 MODEL_FILE = 'best_model.pkl'  # Replace with your pickle file
