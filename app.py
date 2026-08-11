@@ -14,16 +14,16 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-st.write("Starting application...")
+st.write("Application started")
 
 import rdkit
-st.write("RDKit version:", rdkit.__version__)
+
+st.write("RDKit imported")
+st.write(rdkit.__version__)
 
 from rdkit import Chem
-st.write("Chem imported successfully")
 
-from rdkit.Chem import Draw
-st.write("Draw imported successfully")
+st.write("Chem imported")
 
 
 # Load the trained SVC model from pickle file
