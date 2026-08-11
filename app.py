@@ -80,7 +80,7 @@ def main():
     st.title("LXR PREDICTOR")
 
     st.subheader("This app predicts the binding potential of the chemical compounds towards Liver X receptors (LXR) as per fingerprint-based model")
-    st.write("Input a SMILES notation of a chemical compound to predict its activity.")
+    st.write("Input SMILES notation(s) of a chemical compound to predict activity. If multiple SMILES notations are provided, these must be separated by comma")
 
     # Input SMILES notation
     smi = st.text_input("Enter SMILES Notation:", "")
@@ -101,6 +101,7 @@ def main():
                prediction = model.predict([fingerprint])
                activity = "Active (EC50/IC50 < 1000 nM)" if prediction[0] == 1 else "Inactive (EC50/IC50 >= 1000 nM)"
                st.write("## Predicted activity, AD and similarity map (as per fingerprint-based model)")
+               st.write(f"Input SMILES notation: **{smi}**")
                st.write(f"Predicted Activity as per fingerprint based model: **{activity}**")
 
                #Check applicability domain
