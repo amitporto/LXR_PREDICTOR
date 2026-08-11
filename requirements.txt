@@ -7,7 +7,7 @@ pytz==2021.1
 scikit-learn==1.6.1
 rdkit
 altair<5
-rdkit-pypi
+
 
 
 
