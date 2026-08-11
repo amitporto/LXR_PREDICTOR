@@ -80,10 +80,10 @@ def main():
     st.title("LXR PREDICTOR")
 
     st.subheader("This app predicts the binding potential of the chemical compounds towards Liver X receptors (LXR) as per fingerprint-based model")
-    st.write("Input SMILES notation(s) of a chemical compound to predict activity. If multiple SMILES notations are provided, these must be separated by comma")
+    st.write("Input SMILES notation(s) of a chemical compound to predict activity. If multiple SMILES notations are provided, these must be comma separated")
 
     # Input SMILES notation
-    smi = st.text_input("Enter SMILES Notation:", "")
+    smi = st.text_input("Enter SMILES Notation(s):", "")
     slist=smi.split(',')
     for smi in slist:
         if smi:
