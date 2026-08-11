@@ -1,10 +1,10 @@
 import streamlit as st
 import pickle
 #from rdkit import Chem
-from rdkit import Chem, DataStructs
-from rdkit.Chem import Draw
-from rdkit.Chem.Draw import SimilarityMaps
-from rdkit.Chem import AllChem
+#from rdkit import Chem, DataStructs
+#from rdkit.Chem import Draw
+#from rdkit.Chem.Draw import SimilarityMaps
+#from rdkit.Chem import AllChem
 import numpy as np
 from matplotlib import cm
 #from ochem import mycalc
@@ -13,6 +13,17 @@ from sklearn.svm import SVC
 import warnings
 
 warnings.filterwarnings("ignore")
+
+st.write("Starting application...")
+
+import rdkit
+st.write("RDKit version:", rdkit.__version__)
+
+from rdkit import Chem
+st.write("Chem imported successfully")
+
+from rdkit.Chem import Draw
+st.write("Draw imported successfully")
 
 
 # Load the trained SVC model from pickle file
