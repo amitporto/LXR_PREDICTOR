@@ -72,16 +72,12 @@ def plot_similarity_map(mol, model,fpFunction):
     d.FinishDrawing()
     return d
 
-d_ECFP4 = {}
-
-
-
-
 sdf1="LXR_training_Final_minimized.sdf"
 
 sdf2="LXRB_rs25_tr_minimized.sdf"
 
 def applicability(smiles,mysdf,rad):
+    d_ECFP4 = {}
     m=Chem.MolFromSmiles(smiles)
     for mol in Chem.SDMolSupplier(mysdf):
         mg = AllChem.GetMorganFingerprintAsBitVect(mol, radius=rad,nBits=1024,useFeatures=True,useChirality = True)
