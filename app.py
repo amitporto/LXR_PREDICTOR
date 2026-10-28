@@ -11,6 +11,7 @@ from matplotlib import cm
 import pandas as pd
 from sklearn.svm import SVC
 import warnings
+from xgboost import XGBClassifier
 
 warnings.filterwarnings("ignore")
 
